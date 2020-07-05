@@ -83,7 +83,7 @@ Provider.childContextTypes = {
 const store = createStore(combineReducers({ counter, toggler }));
 
 store.subscribe(() => {
-  document.body.innerText = JSON.stringify(store.getState());
+  document.getElementById("json").textContent = JSON.stringify(store.getState(), undefined, 2);
 });
 
 document.addEventListener("click", () => {
