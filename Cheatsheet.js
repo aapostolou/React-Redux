@@ -21,7 +21,7 @@ const toggler = (state = false, action) => {
 
 // createStore()
 import {createSore} from 'redux'
-function createStore(reducer) {
+const createStore = (reducer) => {
   let state;
   let listeners = [];
 
