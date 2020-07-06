@@ -81,6 +81,20 @@ Provider.childContextTypes = {
 
 // connect()
 import { connect } from 'react-redux';
+
+const mapStateToProps = (state, ownProps) => ({
+  todo: state.todos[ownProps.id]
+})
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onClick: () => {
+      dispatch({
+        type: 'SET_VISIBILITY_FILTER',
+        filter: ownProps.filter
+      });
+    }
+  };
+}
 const connect(mapStateToProps, mapDispatchToProps) => {
   return function (WrappedComponent) {
     return class extends React.Component {
