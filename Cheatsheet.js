@@ -1,3 +1,17 @@
+// Installation
+npm install redux
+npm install react-redux
+
+npm install --save-dev redux-devtools
+import { composeWithDevTools } from ‘redux-devtools-extension’;
+
+const store = createStore(reducer, composeWithDevTools(
+  applyMiddleware(...middleware),
+  // other store enhancers if any
+));
+
+// =============================================================
+
 // Reducer(s)
 const counter = (state = 0, action) => {
   switch (action.type) {
