@@ -87,10 +87,9 @@ const mapStateToProps = (state, ownProps) => ({
 })
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: () => {
+    onTodoClick: () => {
       dispatch({
-        type: 'SET_VISIBILITY_FILTER',
-        filter: ownProps.filter
+        type: 'TOGGLE',
       });
     }
   };
@@ -119,6 +118,8 @@ const connect(mapStateToProps, mapDispatchToProps) => {
     } 
   } 
 }
+
+const TodoList = connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
 // Init & Example
 const store = createStore(combineReducers({ counter, toggler }));
