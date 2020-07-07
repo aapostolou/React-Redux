@@ -4,9 +4,10 @@ npm install react-redux
 
 npm install --save-dev redux-devtools
 import { composeWithDevTools } from ‘redux-devtools-extension’;
+import { createStore, applyMiddleware } from "redux";
 
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(...middleware),
+  applyMiddleware(),
   // other store enhancers if any
 ));
 
