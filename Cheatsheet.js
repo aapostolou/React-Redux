@@ -12,13 +12,12 @@ const store = createStore(reducer, composeWithDevTools(
 ));
 
 // Dev Tools
-import { createEpicMiddleware } from 'redux-observable';
-import { applyMiddleware } from 'redux';
-
+import { createEpicMiddleware } from "redux-observable";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 const store = createStore(
-    Reducer,
-    applyMiddleware(createEpicMiddleware())
+    rootReducer,
+    composeWithDevTools(applyMiddleware(epicMiddleware))
 );
 
 // =============================================================
