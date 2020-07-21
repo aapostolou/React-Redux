@@ -2,19 +2,13 @@
 npm install redux
 npm install react-redux
 
-npm install --save-dev redux-devtools-extension
-import { composeWithDevTools } from "redux-devtools-extension";
-import { createStore, applyMiddleware } from "redux";
-
-const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(),
-  // other store enhancers if any
-));
-
 // Dev Tools
+npm install --save-dev redux-devtools-extension
 npm install --save-dev redux-observable
-import { createEpicMiddleware } from "redux-observable";
+
+import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { createEpicMiddleware } from "redux-observable";
 
 const epicMiddleware = createEpicMiddleware();
 
